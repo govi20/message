@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- All the files that are required -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<link href='/css/style.css' rel='stylesheet' type='text/css'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+<div class="container">
+    <h2>Login Panel</h2>
+    <div class="panel panel-default">
+          <div class="panel-heading">
+            <div id="pills">
+              <div><a id="login">Login</a></div>
+              <div><a id="registration">Registration</a></div>
+              <div><a id="forgetCredentials">Forget Credentials</a></div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div id="loginFormPanel" class="loginForm">
+                <form action="doLogin" id="loginSubmit" method="post">
+                    <div>
+                        username (or email): <input type="textbox" name="username"/>
+                    </div>
+                    <div>
+                        password: <input type="password" name="password"/>
+                    </div>
+                    <div>
+                            <input type="submit">
+                        </div>
+                </form>
+            </div>
+            <div id="registrationPanel" class="loginForm">
+                <form action="doRegister" id="registerForm" method="get">
+                    <div>
+                        Name: <input type="textbox" id="name" name="fullName"/>
+                    </div>
+                    <div>
+                        username: <input type="textbox" id="username" name="username"/>
+                    </div>
+                    <div>
+                        email: <input type="email" id="emailAddress" name="emailAddress"/>
+                    </div>
+                    <div>
+                        password: <input type="password" id="password" name="password"/>
+                    </div>
+                    <div>
+                        confirm password: <input type="password" id="confirmPassword" name="confirmPassword"/>
+                    </div>
+                    <div>
+                        <input type="submit">
+                    </div>
+                    
+                </form>
+            </div>
+            <div id="forgetPasswordPanel" class="loginForm">
+                <form method="post" action="doForgetCredentials">
+                    <div>
+                        email: <input type="textbox" id="Email Address" name="emailAddress"/>
+                    </div>
+                    <div>
+                        <input type="submit" value="Reset Password">
+                    </div>
+                </form>
+            </div>
+
+            <div id="resetCredentialsPanel" class="loginForm">
+                    <form  method="post" action="resetCredentials">
+                        <div>
+                            Email: <input type="textbox" id="emailReset" name="emailAddress"/>
+                        </div>
+                        <div>
+                                Password: <input type="password" id="passwordReset" name="password"/>
+                        </div>
+                        <div>
+                                Confirm Password: <input type="password" id="confirnPasswordReset" name="confirmPassword"/>
+                        </div>
+                        <div>
+                            <input type="submit" value="Reset Password">
+                        </div>
+                    </form>
+                </div>
+    
+          </div>
+    </div>
+</div>
+</body>
+<script>
+
+/*    $(document).ready(function(){
+        $(".loginForm").hide();
+        $("#loginFormPanel").show();
+    });
+
+    $("#login").click(function(e){
+        e.preventDefault();
+        $(".loginForm").hide();
+        $("#loginFormPanel").show();
+    });
+
+    $("#registration").click(function(e){
+        e.preventDefault();
+        $(".loginForm").hide();
+        $("#registrationPanel").show();
+    });
+
+    $("#forgetCredentials").click(function(e){
+        e.preventDefault();
+        $(".loginForm").hide();
+        $("#forgetPasswordPanel").show();
+    });
+
+    $("#registerSubmit").submit(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: "doRegister.html",
+            type:"post",
+            data: JSON.stringify($("#registerForm").serialize()),
+            dataType: "json",
+            contentType: 'application/json',
+            context: document.body
+        }).done(function(data){
+            alert("Registration Successful!")
+        })
+        .fail(function() {
+            alert("Registration Failed!")
+        });
+    });*/
+</script>
+</html>
