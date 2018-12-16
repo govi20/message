@@ -29,7 +29,7 @@ public class MainController {
     @GetMapping(value = "index")
     public String index(HttpSession httpSession) {
         Object isLoggedIn =  httpSession.getAttribute ("isLoggedIn");
-        LOGGER.debug ("recevied request in index controller!");
+        LOGGER.debug ("received request in index controller!");
         if(isLoggedIn != null)  {
             LOGGER.debug ("User is authenticated user, redirecting to home page!");
             return "jsp/home.html";
@@ -40,12 +40,9 @@ public class MainController {
         }
     }
 
-    @RequestMapping(value = "doLogin", method = RequestMethod.POST)
-    public String login2(@ModelAttribute Users user) {
-        LOGGER.info ("user requesting login => "+user.getPassword ());
-        Users dbuser = userService.authenticate(user);
-        LOGGER.info ("AuthService call finished!");
-        LOGGER.info ("Setting up MVC");
+    @PostMapping(value = "doLogin")
+    public String doLogin(@ModelAttribute Users user) {
+        LOGGER.info ("user requesting login => "+user.getUsername ());
         return "jsp/home.html";
     }
 
